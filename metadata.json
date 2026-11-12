@@ -1,0 +1,6 @@
+{
+  "name": "Bem Garota - Moda Feminina",
+  "description": "Loja virtual de moda feminina elegante, sofisticada e contemporânea com painel administrativo completo e pedidos via WhatsApp.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-bg: #FAF8F5;
+    --color-surface: #FFFFFF;
+    --color-primary: #B76E79;
+    --color-secondary: #F3E5E6;
+    --color-accent: #D4AF37;
+    --color-text: #2D2522;
+    --color-text-muted: #786C68;
+    --color-border: #EFE7E1;
+    --color-btn-bg: #B76E79;
+    --color-btn-text: #FFFFFF;
+    --radius-btn: 0.5rem;
+    --radius-card: 0.75rem;
+    --font-heading: 'Cormorant Garamond', 'Playfair Display', serif;
+    --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, .font-boutique {
+    font-family: var(--font-heading);
+  }
+}
+
+/* Custom Scrollbar for Luxury Boutique aesthetic */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: #D9CEBE;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+
+
+/* Responsive defaults shared by storefront, overlays and the administration panel. */
+html, body, #root {
+  min-height: 100%;
+  width: 100%;
+}
+
+html {
+  overflow-x: clip;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  overflow-x: clip;
+  min-width: 320px;
+  margin: 0;
+}
+
+button, input, select, textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+img, video, canvas, svg {
+  max-width: 100%;
+}
+
+@media (max-width: 639px) {
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+
+  button, a {
+    touch-action: manipulation;
+  }
+
+  .admin-mobile-safe {
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

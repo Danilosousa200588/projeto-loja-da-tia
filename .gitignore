@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+
+# Production output
+dist/
+build/
+
+# Vercel
+.vercel/
+
+# Environment and sensitive keys
+.env*
+!.env.example
+
+# Temporary and AI studio artifacts
+.aistudio/
+*.log
+*.tmp
+*.local
+
+# System files
+.DS_Store
+Thumbs.db
