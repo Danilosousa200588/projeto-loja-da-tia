@@ -4,10 +4,7 @@
   "outputDirectory": "dist",
   "functions": {
     "api/index.ts": {
-      "includeFiles": [
-        "data/store-db.json",
-        "public/**"
-      ]
+      "includeFiles": "data/**,public/**"
     }
   },
   "rewrites": [
