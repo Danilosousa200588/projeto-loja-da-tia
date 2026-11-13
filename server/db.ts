@@ -1,8 +1,16 @@
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
 import { DatabaseSchema, ThemePreset, ThemeColors, Product } from './types.js';
 
-const DATA_DIR = path.resolve(process.cwd(), 'data');
+// Use the directory of this file as the base, so it works in both
+// local dev (process.cwd()) and Vercel serverless (where cwd changes).
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Resolve data dir relative to the project root (one level up from server/)
+const PROJECT_ROOT = path.resolve(__dirname, '..');
+const DATA_DIR = path.join(PROJECT_ROOT, 'data');
 const DB_FILE = path.join(DATA_DIR, 'store-db.json');
 
 export const THEME_PRESETS: Record<ThemePreset, ThemeColors> = {
